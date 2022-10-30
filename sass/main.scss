@@ -1,0 +1,80 @@
+@import 'config';
+html{
+    height: 100%;
+    body{
+    font-family: 'Open Sans', sans-serif;
+    background: $primary-color;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10%;
+}}
+.container{
+    display: grid;
+    justify-content: center;
+    color:$secondary-color;
+    min-width: 30%;
+    min-height: 10%;
+    border: 1px $secondary-color solid;
+    gap: 4px;
+    border-radius: 7px;
+    overflow: scroll;
+    
+    div{
+        text-align: center;
+        transform: scaleX(0);
+        word-spacing: 2rem;
+        animation: display 0.01s linear 0s 1 forwards normal;
+    }
+}section{
+    display: flex;
+    gap: 3%;
+.text{
+    
+    border:none;
+    border: 1px $secondary-color solid;
+    border-radius: 7px;
+    text-align: center;
+    background:$primary-color;
+    color: $secondary-color;
+}
+
+.button{
+    @extend .text;
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+}
+}
+@keyframes display {
+    0%{
+        transform: scaleX(0);
+    }
+    50%{
+        transform: scaleX(0.5);
+    }
+    100%{
+        transform: scaleX(1);
+    }
+}.warning{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background:$primary-color;
+    text-align: center;
+    color:$secondary-color;
+    font-weight: bolder;
+    font-size: 50px;
+    height: 100vh;
+    visibility: hidden;
+}
+@media screen and (max-width: 700px){
+    .warning{
+        visibility: visible;
+    }
+}
